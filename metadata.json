@@ -1,0 +1,6 @@
+{
+  "name": "BIMIBERD Fitness & Physiotherapy",
+  "description": "Premium fitness center and physiotherapy clinic located in Cameroon. High-end training, rehabilitation, and wellness services.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": []
+}

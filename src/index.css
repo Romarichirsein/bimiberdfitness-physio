@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-gold: #D4AF37;
+  --color-noir: #0B0B0B;
+  --color-gris: #1A1A1A;
+  
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Montserrat", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-noir text-white font-sans;
+  }
+  
+  .dark body {
+    @apply bg-noir text-white;
+  }
+}
+
+.premium-gradient {
+  background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
+}
+
+.text-gold-gradient {
+  @apply bg-clip-text text-transparent bg-[linear-gradient(135deg,#D4AF37_0%,#F9E58B_50%,#D4AF37_100%)]
+}
+
+.gold-border {
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.gold-border-focus:focus {
+  border-color: #D4AF37;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+}
+
