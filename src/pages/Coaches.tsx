@@ -10,32 +10,32 @@ const Coaches = () => {
       name: "Jean-Pierre T.",
       title: lang === "fr" ? "CoachMusculation Senior" : "Senior Bodybuilding Coach",
       exp: "12+ yrs",
-      img: "https://images.unsplash.com/photo-1567013127542-490d757e51fe?q=80&w=1974&auto=format&fit=crop"
+      img: "https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=1887&auto=format&fit=crop"
     },
     {
         name: "Dr. Marie L.",
         title: lang === "fr" ? "Kiné & Rééducation" : "Physio & Rehab Specialist",
         exp: "8+ yrs",
-        img: "https://images.unsplash.com/photo-1559839734-2b71f1e3c77c?q=80&w=2070&auto=format&fit=crop"
+        img: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=1887&auto=format&fit=crop"
     },
     {
         name: "Yasmine O.",
         title: lang === "fr" ? "Coach Danse & Aérobic" : "Dance & Aerobics Coach",
         exp: "6+ yrs",
-        img: "https://images.unsplash.com/photo-1548690312-e3b507d17a12?q=80&w=1974&auto=format&fit=crop"
+        img: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop"
     },
     {
         name: "Ahmed K.",
         title: lang === "fr" ? "Expert HIIT & Cardio" : "HIIT & Cardio Expert",
         exp: "10+ yrs",
-        img: "https://images.unsplash.com/photo-1541534741688-6078c64b52d2?q=80&w=2070&auto=format&fit=crop"
+        img: "https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?q=80&w=2070&auto=format&fit=crop"
     }
   ];
 
   return (
-    <div className="bg-noir pb-24">
+    <div className="bg-[var(--bg-primary)] pb-24">
        <section className="py-24 text-center">
-            <h1 className="text-4xl md:text-7xl font-display font-extrabold text-white mb-4 italic">
+            <h1 className="text-4xl md:text-7xl font-display font-extrabold text-[var(--text-primary)] mb-4 uppercase">
                 {lang === 'fr' ? 'NOTRE ÉQUIPE' : 'OUR TEAM'}
             </h1>
             <p className="text-gold tracking-[0.3em] uppercase text-xs">The experts behind your transformation</p>
@@ -64,9 +64,9 @@ const Coaches = () => {
                         </div>
                     </div>
                     <div className="text-center">
-                        <h3 className="text-xl font-display font-bold text-white mb-1">{coach.name}</h3>
+                        <h3 className="text-xl font-display font-bold text-[var(--text-primary)] mb-1">{coach.name}</h3>
                         <p className="text-gold text-xs font-bold uppercase tracking-widest mb-2">{coach.title}</p>
-                        <p className="text-white/40 text-[10px] uppercase tracking-[0.3em]">Experience: {coach.exp}</p>
+                        <p className="text-[var(--text-secondary)] text-[10px] uppercase tracking-[0.3em]">Experience: {coach.exp}</p>
                     </div>
                 </motion.div>
             ))}

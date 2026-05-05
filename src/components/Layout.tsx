@@ -27,14 +27,14 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed w-full z-50 bg-[#0B0B0B]/80 backdrop-blur-md border-b border-gold/10">
+    <nav className="fixed w-full z-50 bg-[var(--bg-primary)]/80 backdrop-blur-md border-b border-gold/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           <Link to="/" className="flex flex-col">
             <span className="text-2xl font-display font-extrabold text-gold tracking-tight">
               {BRAND.name}
             </span>
-            <span className="text-[10px] text-white/50 uppercase tracking-[0.2em] -mt-1 font-sans">
+            <span className="text-[10px] text-[var(--text-secondary)] uppercase tracking-[0.2em] -mt-1 font-sans">
               Fitness & Physio
             </span>
           </Link>
@@ -47,7 +47,7 @@ const Navbar = () => {
                 to={link.path}
                 className={cn(
                   "text-sm font-medium transition-colors hover:text-gold uppercase tracking-wider",
-                  location.pathname === link.path ? "text-gold" : "text-white/70"
+                  location.pathname === link.path ? "text-gold" : "text-[var(--text-primary)]/70"
                 )}
               >
                 {link.name}
@@ -92,7 +92,7 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden bg-noir border-b border-gold/10"
+            className="md:hidden bg-[var(--bg-primary)] border-b border-gold/10"
           >
             <div className="px-4 pt-2 pb-6 space-y-4">
               {navLinks.map((link) => (
@@ -100,7 +100,7 @@ const Navbar = () => {
                   key={link.path}
                   to={link.path}
                   onClick={() => setIsOpen(false)}
-                  className="block px-3 py-2 text-lg font-display font-bold text-white hover:text-gold"
+                  className="block px-3 py-2 text-lg font-display font-bold text-[var(--text-primary)] hover:text-gold"
                 >
                   {link.name}
                 </Link>
@@ -133,27 +133,27 @@ const Footer = () => {
   const t = TRANSLATIONS[lang].footer;
   
   return (
-    <footer className="bg-gris border-t border-gold/10 pt-20 pb-10">
+    <footer className="bg-[var(--bg-secondary)] border-t border-gold/10 pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12 sm:gap-8">
         <div className="space-y-6">
           <Link to="/" className="flex flex-col">
             <span className="text-3xl font-display font-extrabold text-gold tracking-tight">
               {BRAND.name}
             </span>
-            <span className="text-xs text-white/50 uppercase tracking-[0.2em] -mt-1 font-sans">
+            <span className="text-xs text-[var(--text-secondary)] uppercase tracking-[0.2em] -mt-1">
               Fitness & Physio
             </span>
           </Link>
-          <p className="text-white/60 text-sm leading-relaxed">
+          <p className="text-[var(--text-secondary)] text-sm leading-relaxed">
             {lang === "fr" 
               ? "Le centre d'élite pour votre transformation physique et votre santé à Yaoundé."
               : "The elite center for your physical transformation and health in Yaounde."}
           </p>
           <div className="flex space-x-4">
-            <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:border-gold hover:text-gold transition-colors">
+            <a href="#" className="w-10 h-10 rounded-full border border-[var(--text-secondary)]/20 flex items-center justify-center hover:border-gold hover:text-gold transition-colors">
               <Facebook size={18} />
             </a>
-            <a href="#" className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:border-gold hover:text-gold transition-colors">
+            <a href="#" className="w-10 h-10 rounded-full border border-[var(--text-secondary)]/20 flex items-center justify-center hover:border-gold hover:text-gold transition-colors">
               <Instagram size={18} />
             </a>
           </div>
@@ -161,33 +161,33 @@ const Footer = () => {
 
         <div>
           <h4 className="text-gold font-display font-bold uppercase tracking-widest text-sm mb-6">{t.location}</h4>
-          <p className="text-white/60 text-sm">{BRAND.contact.location}</p>
-          <p className="text-white/60 text-sm mt-2">Yaoundé, Cameroun</p>
+          <p className="text-[var(--text-secondary)] text-sm">{BRAND.contact.location}</p>
+          <p className="text-[var(--text-secondary)] text-sm mt-2">Yaoundé, Cameroun</p>
         </div>
 
         <div>
            <h4 className="text-gold font-display font-bold uppercase tracking-widest text-sm mb-6">{t.hours}</h4>
-          <p className="text-white/60 text-sm">{BRAND.contact.hours}</p>
-          <p className="text-white/60 text-sm mt-2">{lang === 'fr' ? 'Ouvert 7j/7' : 'Open 7 days a week'}</p>
+          <p className="text-[var(--text-secondary)] text-sm">{BRAND.contact.hours}</p>
+          <p className="text-[var(--text-secondary)] text-sm mt-2">{lang === 'fr' ? 'Ouvert 7j/7' : 'Open 7 days a week'}</p>
         </div>
 
         <div>
           <h4 className="text-gold font-display font-bold uppercase tracking-widest text-sm mb-6">{t.contact}</h4>
           <div className="space-y-3">
             {BRAND.contact.phones.map(phone => (
-              <a key={phone} href={`tel:${phone}`} className="flex items-center text-white/60 hover:text-gold text-sm">
+              <a key={phone} href={`tel:${phone}`} className="flex items-center text-[var(--text-secondary)] hover:text-gold text-sm">
                 <Phone size={14} className="mr-2" />
                 {phone}
               </a>
             ))}
-            <a href="mailto:info@bimiberd.com" className="flex items-center text-white/60 hover:text-gold text-sm">
+            <a href="mailto:info@bimiberd.com" className="flex items-center text-[var(--text-secondary)] hover:text-gold text-sm">
               <Mail size={14} className="mr-2" />
               info@bimiberd.com
             </a>
           </div>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto px-4 mt-20 pt-8 border-t border-white/5 text-center text-white/40 text-xs">
+      <div className="max-w-7xl mx-auto px-4 mt-20 pt-8 border-t border-white/5 text-center text-[var(--text-secondary)]/40 text-xs">
         © {new Date().getFullYear()} {BRAND.fullName}. All rights reserved.
       </div>
     </footer>

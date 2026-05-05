@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 
 const HERO_SLIDES = [
   {
-    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop",
+    image: "/images/hero_fitness.png",
     tag: "Premium Fitness",
     title: {
       fr: "Remets-toi en forme avec des professionnels",
@@ -19,7 +19,7 @@ const HERO_SLIDES = [
     }
   },
   {
-    image: "https://images.unsplash.com/photo-1593079831268-3381b0db4a77?q=80&w=2069&auto=format&fit=crop",
+    image: "/images/hero_coaching.png",
     tag: "Elite Coaching",
     title: {
       fr: "Atteignez vos objectifs de performance",
@@ -31,7 +31,7 @@ const HERO_SLIDES = [
     }
   },
   {
-    image: "https://images.unsplash.com/photo-1583454110551-21f2fa209191?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1631815541542-0884ff60a9bb?q=80&w=1974&auto=format&fit=crop",
     tag: "Advanced Physio",
     title: {
       fr: "Récupération et santé optimisées",
@@ -63,7 +63,7 @@ const Home = () => {
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length);
 
   return (
-    <div className="bg-noir">
+    <div className="bg-[var(--bg-primary)]">
       {/* Hero Carousel Section */}
       <section className="relative h-screen flex items-center overflow-hidden">
         <AnimatePresence mode="wait">
@@ -84,7 +84,7 @@ const Home = () => {
               alt="Hero Gym" 
               className="w-full h-full object-cover opacity-50 contrast-125"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-noir via-noir/60 to-noir" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)] via-[var(--bg-primary)]/60 to-[var(--bg-primary)]" />
           </motion.div>
         </AnimatePresence>
 
@@ -102,12 +102,12 @@ const Home = () => {
                    {HERO_SLIDES[currentSlide].tag}
                 </span>
                 
-                <h1 className="text-5xl md:text-8xl lg:text-9xl font-display font-black leading-[0.85] text-white mb-10 tracking-tighter">
+                <h1 className="text-5xl md:text-8xl lg:text-9xl font-display font-black leading-[0.85] text-[var(--text-primary)] mb-10 tracking-tighter">
                   {HERO_SLIDES[currentSlide].title[lang].split(' ').slice(0, -1).join(' ')} <br className="hidden md:block" />
-                  <span className="text-gold-gradient italic">{HERO_SLIDES[currentSlide].title[lang].split(' ').pop()}</span>
+                  <span className="text-gold-gradient">{HERO_SLIDES[currentSlide].title[lang].split(' ').pop()}</span>
                 </h1>
                 
-                <p className="text-lg md:text-xl text-white/70 mb-12 max-w-xl font-light leading-relaxed">
+                <p className="text-lg md:text-xl text-[var(--text-secondary)] mb-12 max-w-xl font-light leading-relaxed">
                   {HERO_SLIDES[currentSlide].subtitle[lang]}
                 </p>
                 
@@ -125,7 +125,7 @@ const Home = () => {
                     />
                   </Link>
                   
-                  <Link to="/fitness" className="px-10 py-5 bg-white/5 border border-white/10 text-white font-bold tracking-[0.1em] rounded-sm hover:bg-white/10 transition-all uppercase text-sm flex items-center justify-center backdrop-blur-sm">
+                  <Link to="/fitness" className="px-10 py-5 bg-[var(--bg-primary)]/5 border border-[var(--text-primary)]/10 text-[var(--text-primary)] font-bold tracking-[0.1em] rounded-sm hover:bg-[var(--text-primary)]/10 transition-all uppercase text-sm flex items-center justify-center backdrop-blur-sm">
                     {lang === 'fr' ? 'NOS SERVICES' : 'OUR SERVICES'}
                   </Link>
                 </div>
@@ -146,10 +146,10 @@ const Home = () => {
             ))}
           </div>
           <div className="flex space-x-4 ml-8">
-            <button onClick={prevSlide} className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:border-gold hover:text-gold transition-colors">
+            <button onClick={prevSlide} className="w-10 h-10 rounded-full border border-[var(--text-primary)]/10 flex items-center justify-center hover:border-gold hover:text-gold transition-colors text-[var(--text-primary)]">
               <ChevronLeft size={20} />
             </button>
-            <button onClick={nextSlide} className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:border-gold hover:text-gold transition-colors">
+            <button onClick={nextSlide} className="w-10 h-10 rounded-full border border-[var(--text-primary)]/10 flex items-center justify-center hover:border-gold hover:text-gold transition-colors text-[var(--text-primary)]">
               <ChevronRight size={20} />
             </button>
           </div>
@@ -177,7 +177,7 @@ const Home = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="py-20 bg-gris border-y border-gold/5"
+        className="py-20 bg-[var(--bg-secondary)] border-y border-gold/5"
       >
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
@@ -197,15 +197,15 @@ const Home = () => {
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-gold/10 mb-4 group-hover:border-gold transition-colors">
                 <stat.icon className="text-gold" size={24} />
               </div>
-              <div className="text-3xl font-display font-bold text-white mb-1">{stat.value}</div>
-              <div className="text-xs text-white/40 uppercase tracking-widest">{stat.label}</div>
+              <div className="text-3xl font-display font-bold text-[var(--text-primary)] mb-1">{stat.value}</div>
+              <div className="text-xs text-[var(--text-secondary)] uppercase tracking-widest">{stat.label}</div>
             </motion.div>
           ))}
         </div>
       </motion.section>
 
       {/* Philosophy Section */}
-      <section className="py-32 px-4 bg-noir relative overflow-hidden">
+      <section className="py-32 px-4 bg-[var(--bg-primary)] relative overflow-hidden">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 md:gap-24">
           <div className="w-full lg:w-1/2 space-y-10 order-2 lg:order-1">
             <motion.div
@@ -213,15 +213,15 @@ const Home = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-gold text-xs font-bold tracking-[0.5em] uppercase mb-6 italic flex items-center">
+              <h2 className="text-gold text-xs font-bold tracking-[0.5em] uppercase mb-6 flex items-center">
                 <span className="w-12 h-[1px] bg-gold mr-4"></span>
                 {lang === 'fr' ? 'NOTRE PHILOSOPHIE' : 'OUR PHILOSOPHY'}
               </h2>
-              <h3 className="text-5xl md:text-7xl font-display font-black text-white uppercase italic tracking-tighter mb-8 leading-[0.9]">
+              <h3 className="text-5xl md:text-7xl font-display font-black text-[var(--text-primary)] uppercase tracking-tighter mb-8 leading-[0.9]">
                 {lang === 'fr' ? 'Plus qu\'une salle,' : 'More than a gym,'} <br />
                 <span className="text-gold-gradient">{lang === 'fr' ? 'Un Style de Vie.' : 'A Lifestyle.'}</span>
               </h3>
-              <p className="text-white/60 text-xl font-light leading-relaxed max-w-xl italic">
+              <p className="text-[var(--text-secondary)] text-xl font-light leading-relaxed max-w-xl">
                 {lang === 'fr' 
                   ? "L'excellence n'est pas un acte, mais une habitude. Nous fusionnons la haute performance sportive avec la précision médicale de la physiothérapie."
                   : "Excellence is not an act, but a habit. We merge high sports performance with the medical precision of physiotherapy."}
@@ -238,8 +238,8 @@ const Home = () => {
                 <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mb-6 border border-gold/20 group-hover:scale-110 transition-transform">
                     <Trophy className="text-gold" size={20} />
                 </div>
-                <h4 className="text-white font-bold uppercase text-sm tracking-widest mb-3">{lang === 'fr' ? 'Performance Elite' : 'Elite Performance'}</h4>
-                <p className="text-white/40 text-xs font-light leading-relaxed">
+                <h4 className="text-[var(--text-primary)] font-bold uppercase text-sm tracking-widest mb-3">{lang === 'fr' ? 'Performance Elite' : 'Elite Performance'}</h4>
+                <p className="text-[var(--text-secondary)] text-xs font-light leading-relaxed">
                   {lang === 'fr' ? 'Dépasser vos limites avec des protocoles d\'entraînement utilisés par les pros.' : 'Push your limits with training protocols used by the pros.'}
                 </p>
               </motion.div>
@@ -249,13 +249,13 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="group p-6 bg-white/5 border border-white/5 rounded-sm hover:border-gold/30 transition-all"
+                className="group p-6 bg-[var(--text-primary)]/5 border border-[var(--text-primary)]/5 rounded-sm hover:border-gold/30 transition-all"
               >
                 <div className="w-12 h-12 bg-gold/10 rounded-full flex items-center justify-center mb-6 border border-gold/20 group-hover:scale-110 transition-transform">
                     <HeartPulse className="text-gold" size={20} />
                 </div>
-                <h4 className="text-white font-bold uppercase text-sm tracking-widest mb-3">{lang === 'fr' ? 'Santé Intégrative' : 'Integrative Health'}</h4>
-                <p className="text-white/40 text-xs font-light leading-relaxed">
+                <h4 className="text-[var(--text-primary)] font-bold uppercase text-sm tracking-widest mb-3">{lang === 'fr' ? 'Santé Intégrative' : 'Integrative Health'}</h4>
+                <p className="text-[var(--text-secondary)] text-xs font-light leading-relaxed">
                   {lang === 'fr' ? 'La physiothérapie est au cœur de notre approche pour une longévité athlétique durable.' : 'Physiotherapy is at the heart of our approach for sustainable athletic longevity.'}
                 </p>
               </motion.div>
@@ -270,33 +270,33 @@ const Home = () => {
           >
             <div className="relative aspect-[4/5] md:aspect-square">
               <img 
-                src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=2070&auto=format&fit=crop" 
+                src="https://images.unsplash.com/photo-1599058917233-57c0e620394e?q=80&w=2070&auto=format&fit=crop" 
                 className="w-full h-full object-cover rounded-sm grayscale hover:grayscale-0 transition-all duration-1000 brightness-75" 
                 alt="Philosophy Excellence" 
               />
-              <div className="absolute inset-0 border-[20px] border-noir opacity-20 pointer-events-none" />
+              <div className="absolute inset-0 border-[20px] border-[var(--bg-primary)] opacity-20 pointer-events-none" />
               <div className="absolute -top-10 -right-10 w-40 h-40 border-t-2 border-r-2 border-gold/30 -z-10" />
               <div className="absolute -bottom-10 -left-10 w-40 h-40 border-b-2 border-l-2 border-gold/30 -z-10" />
             </div>
             
             {/* Expertise Badge */}
-            <div className="absolute bottom-8 right-8 bg-noir/90 backdrop-blur-xl border border-gold/20 p-6 rounded-sm shadow-2xl">
-               <div className="text-gold font-black text-3xl mb-1 italic tracking-tighter">BIMIBERD</div>
-               <div className="text-white/40 text-[10px] uppercase tracking-[0.3em] font-bold">Expertise Center</div>
+            <div className="absolute bottom-8 right-8 bg-[var(--bg-primary)]/90 backdrop-blur-xl border border-gold/20 p-6 rounded-sm shadow-2xl">
+               <div className="text-gold font-black text-3xl mb-1 tracking-tighter">BIMIBERD</div>
+               <div className="text-[var(--text-secondary)] text-[10px] uppercase tracking-[0.3em] font-bold">Expertise Center</div>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Services Section Header */}
-      <section className="pt-20 px-4 bg-noir text-center">
+      <section className="pt-20 px-4 bg-[var(--bg-primary)] text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-gold text-xs font-bold tracking-[0.4em] uppercase mb-4 italic italic">UNPARALLELED EXPERTISE</h2>
-            <h3 className="text-4xl md:text-6xl font-display font-black text-white uppercase italic tracking-tighter mb-4">
+            <h2 className="text-gold text-xs font-bold tracking-[0.4em] uppercase mb-4">UNPARALLELED EXPERTISE</h2>
+            <h3 className="text-4xl md:text-6xl font-display font-black text-[var(--text-primary)] uppercase tracking-tighter mb-4">
               {lang === 'fr' ? 'Nos' : 'Our'} <span className="text-gold-gradient">{lang === 'fr' ? 'Piliers' : 'Services'}</span>
             </h3>
             <div className="w-24 h-1 bg-gold mx-auto mb-16 rounded-full opacity-30" />
@@ -328,7 +328,7 @@ const Home = () => {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70"
                     alt="Fitness"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-noir via-noir/40 to-transparent transition-opacity group-hover:opacity-60" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)] via-[var(--bg-primary)]/40 to-transparent transition-opacity group-hover:opacity-60" />
                 <div className="absolute bottom-10 left-10 p-2">
                     <motion.span 
                         initial={{ opacity: 0.8 }}
@@ -337,8 +337,8 @@ const Home = () => {
                     >
                         Power & Performance
                     </motion.span>
-                    <h2 className="text-4xl font-display font-bold text-white mb-4 italic">FITNESS</h2>
-                    <p className="text-white/60 mb-6 max-w-xs">{TRANSLATIONS[lang].sections.fitness.description}</p>
+                    <h2 className="text-4xl font-display font-bold text-[var(--text-primary)] mb-4 uppercase">FITNESS</h2>
+                    <p className="text-[var(--text-secondary)] mb-6 max-w-xs">{TRANSLATIONS[lang].sections.fitness.description}</p>
                     <Link to="/fitness" className="inline-flex items-center text-gold font-bold text-sm hover:underline group/link">
                         {lang === 'fr' ? 'VOIR TOUT' : 'VIEW ALL'} 
                         <ArrowRight size={16} className="ml-2 group-hover/link:translate-x-2 transition-transform" />
@@ -362,7 +362,7 @@ const Home = () => {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70"
                     alt="Physiotherapy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-noir via-noir/40 to-transparent transition-opacity group-hover:opacity-60" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)] via-[var(--bg-primary)]/40 to-transparent transition-opacity group-hover:opacity-60" />
                 <div className="absolute bottom-10 left-10 p-2">
                     <motion.span 
                         initial={{ opacity: 0.8 }}
@@ -371,8 +371,8 @@ const Home = () => {
                     >
                         RECOVERY & HEALTH
                     </motion.span>
-                    <h2 className="text-4xl font-display font-bold text-white mb-4 italic uppercase">PHYSIOTHÉRAPIE</h2>
-                    <p className="text-white/60 mb-6 max-w-xs">{TRANSLATIONS[lang].sections.physio.description}</p>
+                    <h2 className="text-4xl font-display font-bold text-[var(--text-primary)] mb-4 uppercase">PHYSIOTHÉRAPIE</h2>
+                    <p className="text-[var(--text-secondary)] mb-6 max-w-xs">{TRANSLATIONS[lang].sections.physio.description}</p>
                     <Link to="/physio" className="inline-flex items-center text-gold font-bold text-sm hover:underline group/link">
                         {lang === 'fr' ? 'VOIR TOUT' : 'VIEW ALL'} 
                         <ArrowRight size={16} className="ml-2 group-hover/link:translate-x-2 transition-transform" />
@@ -383,11 +383,11 @@ const Home = () => {
       </motion.section>
 
       {/* Facilities Section */}
-      <section className="py-32 bg-gris/30 overflow-hidden">
+      <section className="py-32 bg-[var(--bg-secondary)] overflow-hidden">
         <div className="max-w-7xl mx-auto px-4">
            <div className="text-center mb-16">
-              <h2 className="text-gold text-xs font-bold tracking-[0.4em] uppercase mb-4 italic">THE SPACE</h2>
-              <h3 className="text-4xl md:text-6xl font-display font-black text-white uppercase italic tracking-tighter">
+              <h2 className="text-gold text-xs font-bold tracking-[0.4em] uppercase mb-4">THE SPACE</h2>
+              <h3 className="text-4xl md:text-6xl font-display font-black text-[var(--text-primary)] uppercase tracking-tighter">
                 {lang === 'fr' ? 'Installations' : 'World Class'} <span className="text-gold-gradient">{lang === 'fr' ? 'D\'Élite' : 'Facilities'}</span>
               </h3>
            </div>
@@ -414,12 +414,12 @@ const Home = () => {
       </section>
 
       {/* Blog Preview */}
-      <section className="py-32 px-4 bg-noir border-t border-gold/5">
+      <section className="py-32 px-4 bg-[var(--bg-primary)] border-t border-gold/5">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8 text-center md:text-left">
             <div>
-              <h2 className="text-gold text-xs font-bold tracking-[0.4em] uppercase mb-4 italic">BIMIBERD INSIGHTS</h2>
-              <h3 className="text-4xl md:text-6xl font-display font-black text-white uppercase italic tracking-tighter">
+              <h2 className="text-gold text-xs font-bold tracking-[0.4em] uppercase mb-4">BIMIBERD INSIGHTS</h2>
+              <h3 className="text-4xl md:text-6xl font-display font-black text-[var(--text-primary)] uppercase tracking-tighter">
                 {lang === 'fr' ? 'Derniers' : 'Latest'} <span className="text-gold-gradient">Articles</span>
               </h3>
             </div>
@@ -443,13 +443,13 @@ const Home = () => {
                   <div className="relative h-64 overflow-hidden rounded-sm mb-6">
                     <img src={post.image} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt={post.title[lang]} />
                     <div className="absolute top-4 left-4">
-                      <span className="px-3 py-1 bg-noir/80 backdrop-blur-md text-gold text-[10px] font-bold uppercase tracking-widest border border-gold/20">
+                      <span className="px-3 py-1 bg-[var(--bg-primary)]/80 backdrop-blur-md text-gold text-[10px] font-bold uppercase tracking-widest border border-gold/20">
                         {post.category}
                       </span>
                     </div>
                   </div>
-                  <h4 className="text-xl font-display font-bold text-white mb-2 group-hover:text-gold transition-colors">{post.title[lang]}</h4>
-                  <div className="flex items-center text-gold text-[10px] font-bold uppercase tracking-widest italic group-hover:underline">
+                  <h4 className="text-xl font-display font-bold text-[var(--text-primary)] mb-2 group-hover:text-gold transition-colors">{post.title[lang]}</h4>
+                  <div className="flex items-center text-gold text-[10px] font-bold uppercase tracking-widest group-hover:underline">
                     {lang === 'fr' ? 'LIRE' : 'READ MORE'} <ArrowRight size={12} className="ml-1" />
                   </div>
                 </Link>
@@ -465,21 +465,21 @@ const Home = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="py-24 bg-gris"
+        className="py-24 bg-[var(--bg-secondary)]"
       >
         <div className="max-w-4xl mx-auto px-4 text-center">
-            <h2 className="text-gold text-xs font-bold tracking-[0.4em] uppercase mb-12 italic">TESTIMONIALS</h2>
-            <p className="text-3xl italic font-light text-white/90 leading-relaxed mb-8">
+            <h2 className="text-gold text-xs font-bold tracking-[0.4em] uppercase mb-12">TESTIMONIALS</h2>
+            <p className="text-3xl font-light text-[var(--text-primary)] leading-relaxed mb-8">
                 "{lang === 'fr' 
                     ? "La transformation n'est pas seulement physique, elle est mentale. BIMIBERD m'a donné les outils pour me surpasser." 
                     : "The transformation is not just physical, it's mental. BIMIBERD gave me the tools to exceed my limits."}"
             </p>
             <div className="flex items-center justify-center space-x-4">
                 <div className="w-12 h-12 rounded-full overflow-hidden border border-gold/30">
-                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop" alt="User" />
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop" alt="User" />
                 </div>
                 <div className="text-left">
-                    <div className="text-white font-bold text-sm uppercase">Cedric M.</div>
+                    <div className="text-[var(--text-primary)] font-bold text-sm uppercase">Cedric M.</div>
                     <div className="text-gold text-[10px] tracking-widest uppercase">CEO, Tech Cameroon</div>
                 </div>
             </div>
@@ -487,11 +487,11 @@ const Home = () => {
       </motion.section>
 
       {/* FAQ Section */}
-      <section className="py-32 px-4 bg-noir border-t border-white/5">
+      <section className="py-32 px-4 bg-[var(--bg-primary)] border-t border-[var(--text-primary)]/5">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-gold text-xs font-bold tracking-[0.4em] uppercase mb-4 italic">QUESTIONS</h2>
-            <h3 className="text-4xl md:text-5xl font-display font-black text-white uppercase italic tracking-tighter">
+            <h2 className="text-gold text-xs font-bold tracking-[0.4em] uppercase mb-4">QUESTIONS</h2>
+            <h3 className="text-4xl md:text-5xl font-display font-black text-[var(--text-primary)] uppercase tracking-tighter">
               {lang === 'fr' ? 'Foire Aux' : 'Frequently Asked'} <span className="text-gold-gradient">Questions</span>
             </h3>
           </div>
@@ -521,9 +521,9 @@ const Home = () => {
               >
                 <div className="flex items-center space-x-4 mb-4">
                   <HelpCircle className="text-gold" size={20} />
-                  <h4 className="text-white font-bold text-lg uppercase tracking-tight italic">{faq.q}</h4>
+                  <h4 className="text-[var(--text-primary)] font-bold text-lg uppercase tracking-tight italic">{faq.q}</h4>
                 </div>
-                <p className="text-white/50 font-light leading-relaxed pl-9">{faq.a}</p>
+                <p className="text-[var(--text-secondary)] font-light leading-relaxed pl-9">{faq.a}</p>
               </motion.div>
             ))}
           </div>
@@ -531,10 +531,10 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-40 px-4 bg-noir relative overflow-hidden">
+      <section className="py-40 px-4 bg-[var(--bg-primary)] relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img src="https://images.unsplash.com/photo-1548691906-f61f7d0ea341?q=80&w=2070&auto=format&fit=crop" className="w-full h-full object-cover opacity-20 contrast-150 grayscale" />
-          <div className="absolute inset-0 bg-gradient-to-r from-noir via-noir/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[var(--bg-primary)] via-[var(--bg-primary)]/80 to-transparent" />
         </div>
         
         <div className="max-w-7xl mx-auto relative z-10">
@@ -544,12 +544,12 @@ const Home = () => {
             viewport={{ once: true }}
             className="max-w-2xl"
           >
-            <h2 className="text-gold text-xs font-bold tracking-[0.5em] uppercase mb-6 italic">{lang === 'fr' ? 'VOTRE VOYAGE COMMENCE ICI' : 'YOUR JOURNEY STARTS HERE'}</h2>
-            <h3 className="text-5xl md:text-8xl font-display font-black text-white uppercase italic tracking-tighter mb-10 leading-[0.85]">
+            <h2 className="text-gold text-xs font-bold tracking-[0.5em] uppercase mb-6">{lang === 'fr' ? 'VOTRE VOYAGE COMMENCE ICI' : 'YOUR JOURNEY STARTS HERE'}</h2>
+            <h3 className="text-5xl md:text-8xl font-display font-black text-[var(--text-primary)] uppercase tracking-tighter mb-10 leading-[0.85]">
               {lang === 'fr' ? 'PRÊT À REJOINDRE' : 'READY TO JOIN'} <br />
               <span className="text-gold-gradient">{lang === 'fr' ? 'L\'ÉLITE ?' : 'THE ELITE?'}</span>
             </h3>
-            <p className="text-white/60 text-xl font-light mb-12 max-w-lg leading-relaxed">
+            <p className="text-[var(--text-secondary)] text-xl font-light mb-12 max-w-lg leading-relaxed">
               {lang === 'fr' 
                 ? "Ne remettez pas votre transformation à demain. Prenez rendez-vous aujourd'hui pour une évaluation avec nos experts."
                 : "Don't delay your transformation. Book an assessment with our experts today."}
