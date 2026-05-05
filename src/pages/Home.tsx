@@ -7,11 +7,11 @@ import { useState, useEffect } from "react";
 
 const HERO_SLIDES = [
   {
-    image: "/images/hero_fitness.png",
+    image: "/images/hero 1.jpg",
     tag: "Premium Fitness",
     title: {
-      fr: "Remets-toi en forme avec des professionnels",
-      en: "Get in shape with professionals"
+      fr: "L'Excellence du Fitness au Cameroun",
+      en: "Fitness Excellence in Cameroon"
     },
     subtitle: {
       fr: "Un centre d'élite pour votre transformation physique et votre santé.",
@@ -19,11 +19,11 @@ const HERO_SLIDES = [
     }
   },
   {
-    image: "/images/hero_coaching.png",
+    image: "/images/hero 2.jpg",
     tag: "Elite Coaching",
     title: {
-      fr: "Atteignez vos objectifs de performance",
-      en: "Reach your performance goals"
+      fr: "Repoussez vos limites avec nos coachs",
+      en: "Push your limits with our coaches"
     },
     subtitle: {
       fr: "Des programmes personnalisés conçus par des experts du fitness.",
@@ -31,18 +31,68 @@ const HERO_SLIDES = [
     }
   },
   {
-    image: "https://images.unsplash.com/photo-1631815541542-0884ff60a9bb?q=80&w=1974&auto=format&fit=crop",
+    image: "/images/hero 3.jpg",
     tag: "Advanced Physio",
     title: {
-      fr: "Récupération et santé optimisées",
-      en: "Optimized recovery and health"
+      fr: "Récupération et Performance Athlétique",
+      en: "Recovery and Athletic Performance"
     },
     subtitle: {
       fr: "Approche médicale de pointe pour la rééducation et le bien-être.",
       en: "Cutting-edge medical approach for rehabilitation and well-being."
     }
+  },
+  {
+    image: "/images/hero 4.jpg",
+    tag: "Medical Precision",
+    title: {
+      fr: "La Santé au Cœur de l'Action",
+      en: "Health at the Heart of Action"
+    },
+    subtitle: {
+      fr: "Fusion unique entre kinésithérapie et entraînement de haut niveau.",
+      en: "Unique fusion between physiotherapy and high-level training."
+    }
+  },
+  {
+    image: "/images/hero 5.jpg",
+    tag: "Elite Community",
+    title: {
+      fr: "Rejoignez la Communauté des Champions",
+      en: "Join the Champions Community"
+    },
+    subtitle: {
+      fr: "Un environnement motivant pour atteindre des résultats exceptionnels.",
+      en: "A motivating environment to achieve exceptional results."
+    }
+  },
+  {
+    image: "/images/hero 6.jpg",
+    tag: "Total Transformation",
+    title: {
+      fr: "Votre Nouvelle Vie Commence Ici",
+      en: "Your New Life Starts Here"
+    },
+    subtitle: {
+      fr: "Évoluez dans un espace conçu pour votre succès personnel.",
+      en: "Evolve in a space designed for your personal success."
+    }
+  },
+  {
+    image: "/images/hero 7.jpg",
+    tag: "Professional Care",
+    title: {
+      fr: "Une Expertise de Classe Mondiale",
+      en: "World-Class Expertise"
+    },
+    subtitle: {
+      fr: "Le meilleur équipement et les meilleurs experts à votre service.",
+      en: "The best equipment and experts at your service."
+    }
   }
 ];
+
+import { Button } from "../components/ui/button";
 
 import { BLOG_POSTS } from "../data/blog";
 
@@ -88,46 +138,49 @@ const Home = () => {
           </motion.div>
         </AnimatePresence>
 
-        <div className="max-w-7xl mx-auto px-4 relative z-10 w-full pt-20">
-          <div className="max-w-4xl">
+        <div className="max-w-7xl mx-auto px-4 relative z-10 w-full pt-20 flex flex-col items-center justify-center text-center">
+          <div className="max-w-5xl mx-auto">
             <AnimatePresence mode="wait">
               <motion.div
                 key={currentSlide}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.8 }}
+                exit={{ opacity: 0, y: -30 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="flex flex-col items-center"
               >
-                <span className="inline-block px-4 py-1.5 border border-gold/40 text-gold text-[10px] font-bold tracking-[0.4em] uppercase mb-8 rounded-full bg-gold/5 backdrop-blur-sm">
-                   {HERO_SLIDES[currentSlide].tag}
-                </span>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  <span className="inline-block px-6 py-2 border border-gold/30 text-gold text-[11px] font-black tracking-[0.5em] uppercase mb-10 rounded-full bg-gold/5 backdrop-blur-md shadow-[0_0_20px_rgba(212,175,55,0.1)]">
+                    {HERO_SLIDES[currentSlide].tag}
+                  </span>
+                </motion.div>
                 
-                <h1 className="text-5xl md:text-8xl lg:text-9xl font-display font-black leading-[0.85] text-[var(--text-primary)] mb-10 tracking-tighter">
-                  {HERO_SLIDES[currentSlide].title[lang].split(' ').slice(0, -1).join(' ')} <br className="hidden md:block" />
-                  <span className="text-gold-gradient">{HERO_SLIDES[currentSlide].title[lang].split(' ').pop()}</span>
+                <h1 className="text-5xl md:text-8xl lg:text-9xl font-display font-black leading-[0.9] text-[var(--text-primary)] mb-10 tracking-tighter uppercase">
+                  {HERO_SLIDES[currentSlide].title[lang].split(' ').slice(0, -2).join(' ')} <br className="hidden md:block" />
+                  <span className="text-gold-gradient">{HERO_SLIDES[currentSlide].title[lang].split(' ').slice(-2).join(' ')}</span>
                 </h1>
                 
-                <p className="text-lg md:text-xl text-[var(--text-secondary)] mb-12 max-w-xl font-light leading-relaxed">
+                <p className="text-lg md:text-2xl text-[var(--text-secondary)] mb-12 max-w-2xl font-light leading-relaxed mx-auto">
                   {HERO_SLIDES[currentSlide].subtitle[lang]}
                 </p>
                 
-                <div className="flex flex-col sm:flex-row gap-6 mt-4 relative z-20">
-                  <Link to="/contact" className="px-10 py-5 premium-gradient text-noir font-black tracking-[0.1em] rounded-sm hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] transition-all flex items-center justify-center group relative overflow-hidden uppercase text-sm">
-                    <span className="relative z-10 flex items-center">
+                <div className="flex flex-col sm:flex-row gap-6 mt-4 relative z-20 justify-center items-center">
+                  <Button asChild variant="premium" size="xl">
+                    <Link to="/contact">
                       {lang === 'fr' ? 'RÉSERVER UNE SÉANCE' : 'BOOK A SESSION'}
                       <ArrowRight className="ml-3 group-hover:translate-x-2 transition-transform" strokeWidth={3} />
-                    </span>
-                    <motion.div 
-                      className="absolute inset-0 bg-white/30"
-                      initial={{ x: "-100%" }}
-                      whileHover={{ x: "100%" }}
-                      transition={{ duration: 0.6 }}
-                    />
-                  </Link>
+                    </Link>
+                  </Button>
                   
-                  <Link to="/fitness" className="px-10 py-5 bg-[var(--bg-primary)]/5 border border-[var(--text-primary)]/10 text-[var(--text-primary)] font-bold tracking-[0.1em] rounded-sm hover:bg-[var(--text-primary)]/10 transition-all uppercase text-sm flex items-center justify-center backdrop-blur-sm">
-                    {lang === 'fr' ? 'NOS SERVICES' : 'OUR SERVICES'}
-                  </Link>
+                  <Button asChild variant="outline" size="xl" className="backdrop-blur-md">
+                    <Link to="/fitness">
+                      {lang === 'fr' ? 'NOS SERVICES' : 'OUR SERVICES'}
+                    </Link>
+                  </Button>
                 </div>
               </motion.div>
             </AnimatePresence>
@@ -135,13 +188,13 @@ const Home = () => {
         </div>
 
         {/* Carousel Controls */}
-        <div className="absolute bottom-10 left-10 z-20 hidden md:flex items-center space-x-6">
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex items-center space-x-6">
           <div className="flex items-center space-x-2">
             {HERO_SLIDES.map((_, idx) => (
               <button
                 key={idx}
                 onClick={() => setCurrentSlide(idx)}
-                className={`h-1 transition-all duration-500 rounded-full ${idx === currentSlide ? 'w-12 bg-gold' : 'w-4 bg-white/20'}`}
+                className={`h-1.5 transition-all duration-500 rounded-full ${idx === currentSlide ? 'w-12 bg-gold' : 'w-4 bg-white/20 hover:bg-white/40'}`}
               />
             ))}
           </div>
