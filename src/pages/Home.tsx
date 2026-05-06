@@ -159,7 +159,7 @@ const Home = () => {
                   </span>
                 </motion.div>
                 
-                <h1 className="text-4xl md:text-7xl lg:text-8xl font-display font-black leading-[0.9] text-[var(--text-primary)] mb-10 tracking-tighter uppercase">
+                <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-black leading-[0.9] text-[var(--text-primary)] mb-10 tracking-tighter uppercase">
                   {HERO_SLIDES[currentSlide].title[lang].split(' ').slice(0, -2).join(' ')} <br className="hidden md:block" />
                   <span className="text-gold-gradient">{HERO_SLIDES[currentSlide].title[lang].split(' ').slice(-2).join(' ')}</span>
                 </h1>

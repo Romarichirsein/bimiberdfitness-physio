@@ -40,7 +40,7 @@ const Coaches = () => {
          transition={{ duration: 0.8 }}
          className="py-24 text-center"
        >
-            <h1 className="text-4xl md:text-7xl font-display font-extrabold text-[var(--text-primary)] mb-4 uppercase">
+            <h1 className="text-2xl sm:text-5xl md:text-7xl font-display font-extrabold text-[var(--text-primary)] mb-4 uppercase">
                 {lang === 'fr' ? 'NOTRE ÉQUIPE' : 'OUR TEAM'}
             </h1>
             <p className="text-gold tracking-[0.3em] uppercase text-xs">The experts behind your transformation</p>

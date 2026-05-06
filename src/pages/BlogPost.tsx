@@ -50,7 +50,7 @@ const BlogPost = () => {
               {post.category}
             </span>
             
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-black text-white leading-tight mb-8 uppercase italic tracking-tighter">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-black text-white leading-tight mb-8 uppercase italic tracking-tighter">
               {post.title[lang]}
             </h1>
             

@@ -82,7 +82,7 @@ _Envoyé depuis le site Elite Performance_`;
           transition={{ duration: 0.8 }}
           className="py-24 text-center"
         >
-            <h1 className="text-4xl md:text-7xl font-display font-extrabold text-white mb-4 italic">
+            <h1 className="text-3xl sm:text-5xl md:text-7xl font-display font-extrabold text-white mb-4 italic">
                 {lang === 'fr' ? 'CONTACTEZ-NOUS' : 'GET IN TOUCH'}
             </h1>
             <p className="text-gold tracking-[0.3em] uppercase text-xs">We are ready to guide you</p>

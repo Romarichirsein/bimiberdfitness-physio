@@ -15,7 +15,7 @@ const Blog = () => {
            animate={{ opacity: 1, y: 0 }}
            className="text-center mb-16"
         >
-          <h1 className="text-5xl md:text-7xl font-display font-black text-white mb-6 uppercase italic tracking-tighter">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-display font-black text-white mb-6 uppercase italic tracking-tighter">
             {lang === "fr" ? "Notre" : "Our"} <span className="text-gold-gradient">Blog</span>
           </h1>
           <p className="text-white/60 max-w-2xl mx-auto text-lg font-light">

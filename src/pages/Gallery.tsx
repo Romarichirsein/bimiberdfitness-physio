@@ -45,7 +45,7 @@ const Gallery = () => {
          transition={{ duration: 0.8 }}
          className="py-24 text-center"
        >
-            <h1 className="text-4xl md:text-7xl font-display font-extrabold text-white mb-4 italic uppercase">
+            <h1 className="text-3xl sm:text-5xl md:text-7xl font-display font-extrabold text-white mb-4 italic uppercase">
                 {lang === 'fr' ? 'GALERIE D\'IMAGES' : 'GALLERY'}
             </h1>
             <p className="text-gold tracking-[0.3em] uppercase text-xs">Excellence in every corner</p>

@@ -50,13 +50,13 @@ const Programs = () => {
          transition={{ duration: 0.8 }}
          className="py-24 text-center"
        >
-            <h1 className="text-4xl md:text-7xl font-display font-extrabold text-white mb-4 italic uppercase">
+            <h1 className="text-3xl sm:text-5xl md:text-7xl font-display font-extrabold text-white mb-4 italic uppercase">
                 {lang === 'fr' ? 'PROGRAMMES & TARIFS' : 'PROGRAMS & PRICING'}
             </h1>
             <p className="text-gold tracking-[0.3em] uppercase text-xs">Invest in your transformation</p>
        </motion.section>
 
-       <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-8">
+       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {plans.map((plan, i) => (
                 <motion.div 
                     key={i}
