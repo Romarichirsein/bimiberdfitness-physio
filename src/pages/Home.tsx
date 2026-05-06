@@ -34,8 +34,8 @@ const HERO_SLIDES = [
     image: "/images/hero 3.jpg",
     tag: "Advanced Physio",
     title: {
-      fr: "Récupération et Performance Athlétique",
-      en: "Recovery and Athletic Performance"
+      fr: "Récupération et santé optimisées",
+      en: "Recovery and Optimized Health"
     },
     subtitle: {
       fr: "Approche médicale de pointe pour la rééducation et le bien-être.",
@@ -159,7 +159,7 @@ const Home = () => {
                   </span>
                 </motion.div>
                 
-                <h1 className="text-5xl md:text-8xl lg:text-9xl font-display font-black leading-[0.9] text-[var(--text-primary)] mb-10 tracking-tighter uppercase">
+                <h1 className="text-4xl md:text-7xl lg:text-8xl font-display font-black leading-[0.9] text-[var(--text-primary)] mb-10 tracking-tighter uppercase">
                   {HERO_SLIDES[currentSlide].title[lang].split(' ').slice(0, -2).join(' ')} <br className="hidden md:block" />
                   <span className="text-gold-gradient">{HERO_SLIDES[currentSlide].title[lang].split(' ').slice(-2).join(' ')}</span>
                 </h1>
@@ -262,19 +262,21 @@ const Home = () => {
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16 md:gap-24">
           <div className="w-full lg:w-1/2 space-y-10 order-2 lg:order-1">
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              className="text-center"
             >
-              <h2 className="text-gold text-xs font-bold tracking-[0.5em] uppercase mb-6 flex items-center">
+              <h2 className="text-gold text-xs font-bold tracking-[0.5em] uppercase mb-6 flex items-center justify-center">
                 <span className="w-12 h-[1px] bg-gold mr-4"></span>
                 {lang === 'fr' ? 'NOTRE PHILOSOPHIE' : 'OUR PHILOSOPHY'}
+                <span className="w-12 h-[1px] bg-gold ml-4"></span>
               </h2>
               <h3 className="text-5xl md:text-7xl font-display font-black text-[var(--text-primary)] uppercase tracking-tighter mb-8 leading-[0.9]">
                 {lang === 'fr' ? 'Plus qu\'une salle,' : 'More than a gym,'} <br />
                 <span className="text-gold-gradient">{lang === 'fr' ? 'Un Style de Vie.' : 'A Lifestyle.'}</span>
               </h3>
-              <p className="text-[var(--text-secondary)] text-xl font-light leading-relaxed max-w-xl">
+              <p className="text-[var(--text-secondary)] text-xl font-light leading-relaxed max-w-xl mx-auto">
                 {lang === 'fr' 
                   ? "L'excellence n'est pas un acte, mais une habitude. Nous fusionnons la haute performance sportive avec la précision médicale de la physiothérapie."
                   : "Excellence is not an act, but a habit. We merge high sports performance with the medical precision of physiotherapy."}
@@ -469,14 +471,14 @@ const Home = () => {
       {/* Blog Preview */}
       <section className="py-32 px-4 bg-[var(--bg-primary)] border-t border-gold/5">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8 text-center md:text-left">
+          <div className="flex flex-col justify-center items-center mb-16 gap-8 text-center">
             <div>
               <h2 className="text-gold text-xs font-bold tracking-[0.4em] uppercase mb-4">BIMIBERD INSIGHTS</h2>
               <h3 className="text-4xl md:text-6xl font-display font-black text-[var(--text-primary)] uppercase tracking-tighter">
                 {lang === 'fr' ? 'Derniers' : 'Latest'} <span className="text-gold-gradient">Articles</span>
               </h3>
             </div>
-            <Link to="/blog" className="px-8 py-3 border border-gold text-gold font-bold text-xs uppercase tracking-widest hover:bg-gold hover:text-noir transition-all rounded-sm flex items-center group mb-2 mx-auto md:mx-0">
+            <Link to="/blog" className="px-8 py-3 border border-gold text-gold font-bold text-xs uppercase tracking-widest hover:bg-gold hover:text-noir transition-all rounded-sm flex items-center group mb-2">
               {lang === 'fr' ? 'TOUT LE BLOG' : 'VIEW ALL POSTS'}
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={16} />
             </Link>
@@ -590,19 +592,19 @@ const Home = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-[var(--bg-primary)] via-[var(--bg-primary)]/80 to-transparent" />
         </div>
         
-        <div className="max-w-7xl mx-auto relative z-10">
+        <div className="max-w-7xl mx-auto relative z-10 text-center flex flex-col items-center">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="max-w-2xl"
+            className="max-w-3xl"
           >
             <h2 className="text-gold text-xs font-bold tracking-[0.5em] uppercase mb-6">{lang === 'fr' ? 'VOTRE VOYAGE COMMENCE ICI' : 'YOUR JOURNEY STARTS HERE'}</h2>
             <h3 className="text-5xl md:text-8xl font-display font-black text-[var(--text-primary)] uppercase tracking-tighter mb-10 leading-[0.85]">
               {lang === 'fr' ? 'PRÊT À REJOINDRE' : 'READY TO JOIN'} <br />
               <span className="text-gold-gradient">{lang === 'fr' ? 'L\'ÉLITE ?' : 'THE ELITE?'}</span>
             </h3>
-            <p className="text-[var(--text-secondary)] text-xl font-light mb-12 max-w-lg leading-relaxed">
+            <p className="text-[var(--text-secondary)] text-xl font-light mb-12 max-w-lg leading-relaxed mx-auto">
               {lang === 'fr' 
                 ? "Ne remettez pas votre transformation à demain. Prenez rendez-vous aujourd'hui pour une évaluation avec nos experts."
                 : "Don't delay your transformation. Book an assessment with our experts today."}
