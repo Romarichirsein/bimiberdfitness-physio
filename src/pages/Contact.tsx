@@ -67,7 +67,7 @@ ${details || 'Aucun détail fourni.'}
 ---------------------------------------
 _Envoyé depuis le site Elite Performance_`;
 
-    const whatsappUrl = `https://wa.me/237699000000?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/${BRAND.contact.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
     
     setSubmitted(true);
@@ -76,12 +76,17 @@ _Envoyé depuis le site Elite Performance_`;
 
   return (
     <div className="bg-noir pb-24">
-       <section className="py-24 text-center">
+        <motion.section 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="py-24 text-center"
+        >
             <h1 className="text-4xl md:text-7xl font-display font-extrabold text-white mb-4 italic">
                 {lang === 'fr' ? 'CONTACTEZ-NOUS' : 'GET IN TOUCH'}
             </h1>
             <p className="text-gold tracking-[0.3em] uppercase text-xs">We are ready to guide you</p>
-       </section>
+        </motion.section>
 
        <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-16">
             <motion.div 
@@ -125,13 +130,18 @@ _Envoyé depuis le site Elite Performance_`;
                 </div>
 
                 {/* Simple Map Placeholder */}
-                <div className="w-full h-64 bg-gris rounded-sm overflow-hidden gold-border relative flex items-center justify-center opacity-60">
+                <motion.div 
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    className="w-full h-64 bg-gris rounded-sm overflow-hidden gold-border relative flex items-center justify-center opacity-60"
+                >
                     <MapPin className="text-gold/20 absolute" size={100} />
                     <div className="text-center p-8">
                         <p className="text-gold font-bold uppercase tracking-widest text-xs mb-2">Interactive Map</p>
                         <p className="text-white/40 text-[10px] uppercase">Coming Soon to Yaoundé Digital Hub</p>
                     </div>
-                </div>
+                </motion.div>
             </motion.div>
 
             <motion.div 

@@ -39,12 +39,17 @@ const Gallery = () => {
 
   return (
     <div className="bg-noir pb-24">
-       <section className="py-24 text-center">
-            <h1 className="text-4xl md:text-7xl font-display font-extrabold text-white mb-4 italic">
+       <motion.section 
+         initial={{ opacity: 0, y: 20 }}
+         animate={{ opacity: 1, y: 0 }}
+         transition={{ duration: 0.8 }}
+         className="py-24 text-center"
+       >
+            <h1 className="text-4xl md:text-7xl font-display font-extrabold text-white mb-4 italic uppercase">
                 {lang === 'fr' ? 'GALERIE D\'IMAGES' : 'GALLERY'}
             </h1>
             <p className="text-gold tracking-[0.3em] uppercase text-xs">Excellence in every corner</p>
-       </section>
+       </motion.section>
 
        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-4">
             {images.map((img, i) => (

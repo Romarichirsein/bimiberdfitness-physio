@@ -8,9 +8,9 @@ const Coaches = () => {
   const team = [
     {
       name: "Jean-Pierre T.",
-      title: lang === "fr" ? "CoachMusculation Senior" : "Senior Bodybuilding Coach",
+      title: lang === "fr" ? "Coach Musculation Senior" : "Senior Bodybuilding Coach",
       exp: "12+ yrs",
-      img: "https://images.unsplash.com/photo-1594381898411-846e7d193883?q=80&w=1887&auto=format&fit=crop"
+      img: "https://images.unsplash.com/photo-1597452485669-2c7bb5fef90d?q=80&w=2069&auto=format&fit=crop"
     },
     {
         name: "Dr. Marie L.",
@@ -22,24 +22,29 @@ const Coaches = () => {
         name: "Yasmine O.",
         title: lang === "fr" ? "Coach Danse & Aérobic" : "Dance & Aerobics Coach",
         exp: "6+ yrs",
-        img: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop"
+        img: "https://images.unsplash.com/photo-1518611012118-29615638a44f?q=80&w=2070&auto=format&fit=crop"
     },
     {
         name: "Ahmed K.",
         title: lang === "fr" ? "Expert HIIT & Cardio" : "HIIT & Cardio Expert",
         exp: "10+ yrs",
-        img: "https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?q=80&w=2070&auto=format&fit=crop"
+        img: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070&auto=format&fit=crop"
     }
   ];
 
   return (
     <div className="bg-[var(--bg-primary)] pb-24">
-       <section className="py-24 text-center">
+       <motion.section 
+         initial={{ opacity: 0, y: -20 }}
+         animate={{ opacity: 1, y: 0 }}
+         transition={{ duration: 0.8 }}
+         className="py-24 text-center"
+       >
             <h1 className="text-4xl md:text-7xl font-display font-extrabold text-[var(--text-primary)] mb-4 uppercase">
                 {lang === 'fr' ? 'NOTRE ÉQUIPE' : 'OUR TEAM'}
             </h1>
             <p className="text-gold tracking-[0.3em] uppercase text-xs">The experts behind your transformation</p>
-       </section>
+       </motion.section>
 
        <div className="max-w-7xl mx-auto px-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {team.map((coach, i) => (

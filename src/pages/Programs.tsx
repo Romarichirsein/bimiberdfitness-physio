@@ -44,12 +44,17 @@ const Programs = () => {
 
   return (
     <div className="bg-noir pb-24 min-h-screen">
-       <section className="py-24 text-center">
-            <h1 className="text-4xl md:text-7xl font-display font-extrabold text-white mb-4 italic">
+       <motion.section 
+         initial={{ opacity: 0, y: 20 }}
+         animate={{ opacity: 1, y: 0 }}
+         transition={{ duration: 0.8 }}
+         className="py-24 text-center"
+       >
+            <h1 className="text-4xl md:text-7xl font-display font-extrabold text-white mb-4 italic uppercase">
                 {lang === 'fr' ? 'PROGRAMMES & TARIFS' : 'PROGRAMS & PRICING'}
             </h1>
             <p className="text-gold tracking-[0.3em] uppercase text-xs">Invest in your transformation</p>
-       </section>
+       </motion.section>
 
        <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-8">
             {plans.map((plan, i) => (

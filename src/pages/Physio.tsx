@@ -28,7 +28,7 @@ const Physio = () => {
         title: lang === "fr" ? "RÉÉDUCATION INFANTILE" : "CHILD REHABILITATION",
         desc: lang === "fr" ? "Accompagnement spécialisé pour les plus jeunes." : "Specialized guidance for the youngest.",
         icon: Baby,
-        img: "https://images.unsplash.com/photo-1581009146145-b5ef03a94e78?q=80&w=2070&auto=format&fit=crop"
+        img: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?q=80&w=2040&auto=format&fit=crop"
     }
   ];
 
@@ -61,7 +61,7 @@ const Physio = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="max-w-3xl mb-16"
+            className="max-w-3xl mb-16 text-center md:text-left mx-auto md:mx-0"
         >
             <h2 className="text-3xl font-display font-bold text-white mb-6 uppercase italic tracking-tighter">
                 {lang === 'fr' ? 'NOTRE APPROCHE MÉDICALE' : 'OUR MEDICAL APPROACH'}

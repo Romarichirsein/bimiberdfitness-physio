@@ -10,7 +10,7 @@ const Fitness = () => {
       title: lang === "fr" ? "MUSCULATION" : "BODYBUILDING",
       desc: lang === "fr" ? "Équipements de pointe pour sculpter votre corps." : "State-of-the-art equipment to sculpt your body.",
       icon: Dumbbell,
-      img: "https://images.unsplash.com/photo-1583454110551-21f2fa2adfcd?q=80&w=2070&auto=format&fit=crop"
+      img: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop"
     },
     {
         title: lang === "fr" ? "AÉROBIC" : "AEROBICS",
