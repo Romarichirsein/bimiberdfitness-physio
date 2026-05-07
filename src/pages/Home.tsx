@@ -115,7 +115,7 @@ const Home = () => {
   return (
     <div className="bg-[var(--bg-primary)]">
       {/* Hero Carousel Section */}
-      <section className="relative h-screen flex items-center overflow-hidden">
+      <section className="relative h-screen flex items-center overflow-hidden" style={{ zIndex: 1 }}>
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
@@ -134,11 +134,11 @@ const Home = () => {
               alt="Hero Gym" 
               className="w-full h-full object-cover opacity-50 contrast-125"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)] via-[var(--bg-primary)]/60 to-[var(--bg-primary)]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-primary)] via-[var(--bg-primary)]/40 to-[var(--bg-primary)]/80" />
           </motion.div>
         </AnimatePresence>
 
-        <div className="max-w-7xl mx-auto px-4 relative z-10 w-full pt-20 flex flex-col items-center justify-center text-center">
+        <div className="max-w-7xl mx-auto px-4 relative z-10 w-full pt-20 pb-32 flex flex-col items-center justify-center text-center">
           <div className="max-w-5xl mx-auto">
             <AnimatePresence mode="wait">
               <motion.div
@@ -168,7 +168,7 @@ const Home = () => {
                   {HERO_SLIDES[currentSlide].subtitle[lang]}
                 </p>
                 
-                <div className="flex flex-col sm:flex-row gap-6 mt-4 relative z-20 justify-center items-center">
+                <div className="flex flex-col sm:flex-row gap-6 mt-4 relative z-30 justify-center items-center">
                   <Button asChild variant="premium" size="xl">
                     <Link to="/contact">
                       {lang === 'fr' ? 'RÉSERVER UNE SÉANCE' : 'BOOK A SESSION'}
@@ -187,25 +187,15 @@ const Home = () => {
           </div>
         </div>
 
-        {/* Carousel Controls */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex items-center space-x-6">
-          <div className="flex items-center space-x-2">
-            {HERO_SLIDES.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => setCurrentSlide(idx)}
-                className={`h-1.5 transition-all duration-500 rounded-full ${idx === currentSlide ? 'w-12 bg-gold' : 'w-4 bg-white/20 hover:bg-white/40'}`}
-              />
-            ))}
-          </div>
-          <div className="flex space-x-4 ml-8">
-            <button onClick={prevSlide} className="w-10 h-10 rounded-full border border-[var(--text-primary)]/10 flex items-center justify-center hover:border-gold hover:text-gold transition-colors text-[var(--text-primary)]">
-              <ChevronLeft size={20} />
-            </button>
-            <button onClick={nextSlide} className="w-10 h-10 rounded-full border border-[var(--text-primary)]/10 flex items-center justify-center hover:border-gold hover:text-gold transition-colors text-[var(--text-primary)]">
-              <ChevronRight size={20} />
-            </button>
-          </div>
+        {/* Carousel Controls - Dots only */}
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex items-center space-x-2">
+          {HERO_SLIDES.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setCurrentSlide(idx)}
+              className={`h-1.5 transition-all duration-500 rounded-full ${idx === currentSlide ? 'w-12 bg-gold' : 'w-4 bg-white/20 hover:bg-white/40'}`}
+            />
+          ))}
         </div>
 
         {/* Scroll Indicator */}
@@ -230,7 +220,7 @@ const Home = () => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="py-20 bg-[var(--bg-secondary)] border-y border-gold/5"
+        className="py-20 bg-[var(--bg-secondary)] border-y border-gold/5 relative" style={{ zIndex: 2 }}
       >
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
